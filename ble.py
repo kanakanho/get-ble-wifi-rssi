@@ -54,8 +54,6 @@ def save_file_init():
     wifi_file = f"data/wifi/{mouth}-{day}-{time}.csv"
     with open(ble_file, "w") as f:
         f.write("rssi,address\n")
-    with open(wifi_file, "w") as f:
-        f.write("SSID,RSSI\n")
     return (ble_file, wifi_file)
 
 

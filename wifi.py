@@ -51,10 +51,8 @@ def save_file_init():
     mouth, day, time = time_init()
     ble_file = f"data/ble/{mouth}-{day}-{time}.csv"
     wifi_file = f"data/wifi/{mouth}-{day}-{time}.csv"
-    with open(ble_file, "w") as f:
-        f.write("rssi,address\n")
     with open(wifi_file, "w") as f:
-        f.write("SSID,RSSI\n")
+        f.write("rssi,address\n")
     return (ble_file, wifi_file)
 
 
@@ -101,7 +99,7 @@ def save_wifi_data(wifi_devices, wifi_file):
 
         # Save the SSID and RSSI to a file
         with open(wifi_file, "a") as f:
-            f.write(f"{ssid},{rssi}\n")
+            f.write(f"{rssi},{ssid}\n")
 
 
 asyncio.run(main())
